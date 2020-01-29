@@ -5,7 +5,7 @@ It is a software for speech analysis and synthesis. It can estimate continuous p
 
 
 
-### I- Requirements:
+### Requirements:
 
 - Python 3
 - SPTK 3.9
@@ -14,13 +14,13 @@ It is a software for speech analysis and synthesis. It can estimate continuous p
 
 
 
-### II- Install
+### Install
 
 git clone https://github.com/malradhi/continuous_vocoder.git
 
 
 
-### III- Testing/HowTo
+### Testing / HowTo
 
 In the root directory, simply run:
 
@@ -30,12 +30,12 @@ You can also have a look at the file cont_features_extraction.py and cont_speech
 
 
 
-### IV- Legal
+### Legal
 Copyright(C) 2020 Department of Telecommunications and Media informatics, Speech Communication and Smart Interactions Laboratory, Budapest University of Technology and Economics, Hungary.
 
 
 
-### V- External tools
+### External tools
 
 1) continuous fundamental frequency, a simple continuous algorithm is used: 
 Garner P. N., Cernak M., Motlicek P., "A simple continuous pitch estimation algorithm," IEEE Signal Processing Letters, vol. 20, no. 1, pp. 102-105, 2013, https://doi.org/10.1109/LSP.2012.2231675
@@ -48,7 +48,7 @@ Masanori Morise, CheapTrick, a spectral envelope estimator for high-quality spee
 
 
 
-VI- Demo
+### Demo
 Audio samples are also available in English and Arabic (with emotions) at http://smartlab.tmit.bme.hu/vocoder_Arabic_2018
 
 
