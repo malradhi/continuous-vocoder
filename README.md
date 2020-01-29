@@ -6,6 +6,7 @@ It is a software for speech analysis and synthesis. It can estimate continuous p
 
 
 
+
 ### Requirements:
 
 - Python 3
@@ -16,10 +17,12 @@ It is a software for speech analysis and synthesis. It can estimate continuous p
 
 
 
+
 ### Install
-'''
+
 git clone https://github.com/malradhi/continuous_vocoder.git
-'''
+
+
 
 
 
@@ -34,8 +37,10 @@ You can also have a look at the file cont_features_extraction.py and cont_speech
 
 
 
+
 ### Legal
 Copyright(C) 2020 Department of Telecommunications and Media informatics, Speech Communication and Smart Interactions Laboratory, Budapest University of Technology and Economics, Hungary.
+
 
 
 
@@ -54,15 +59,17 @@ Masanori Morise, CheapTrick, a spectral envelope estimator for high-quality spee
 
 
 
+
 ### Demo
 Audio samples are also available in English and Arabic (with emotions) at http://smartlab.tmit.bme.hu/vocoder_Arabic_2018
 
 
 
 
+
 ### References
 
-This software is based on the method described in the papers:
+##### This software is based on the method described in the papers:
 
 [1] Mohammed Salah Al-Radhi, Tamás Gábor Csapó, Géza Németh, Time-domain envelope modulating the noise component of excitation in a continuous residual-based vocoder for statistical parametric speech synthesis, in Proceedings of the 18th Interspeech conference, pp. 434-438, Stockholm, Sweeden, 2017.
 
