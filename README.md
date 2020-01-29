@@ -26,6 +26,7 @@ $ git clone https://github.com/malradhi/continuous_vocoder.git
 In the root directory, simply run:
 
 ```
+$ chmod u+x *.sh
 $ ./run_continuous_vocoder.sh
 ```
 
