@@ -32,15 +32,16 @@ Copyright(C) 2020 Department of Telecommunications and Media informatics, Speech
 
 ### External tools
 
-* a simple continuous algorithm is used:
+* simple continuous F0 algorithm is used:
 
 Garner P. N., Cernak M., Motlicek P., "A simple continuous pitch estimation algorithm," IEEE Signal Processing Letters, vol. 20, no. 1, pp. 102-105, 2013, https://doi.org/10.1109/LSP.2012.2231675
 
-* continuous maximum voiced frequency, both amplitude and phase spectra are used:
+
+* continuous MVF, both amplitude and phase spectra are used:
 
 Drugman T., Stylianou Y., "Maximum Voiced Frequency Estimation : Exploiting Amplitude and Phase Spectra," IEEE Signal Processing Letters, vol. 21, no. 10, p. 1230–1234, 2014, https://doi.org/10.1109/LSP.2014.2332186 
 
-* continuous spectral envelope, the estimator CheapTrick is used:
+* continuous MGC, the estimator CheapTrick is used:
 
 Masanori Morise, CheapTrick, a spectral envelope estimator for high-quality speech synthesis, Speech Communication, Volume 67, 2015, Pages 1-7, http://dx.doi.org/10.1016/j.specom.2014.09.003
 
