@@ -53,13 +53,14 @@ Masanori Morise, CheapTrick, a spectral envelope estimator for high-quality spee
 
 
 ### Demo
-Audio samples are also available in English and Arabic (with emotions) at http://smartlab.tmit.bme.hu/vocoder_Arabic_2018
+Audio samples are also available in English and Arabic (with emotions) at
+> http://smartlab.tmit.bme.hu/vocoder_Arabic_2018
 
 
 
 ### References
 
-*This software is based on the method described in the papers*:
+*This software is based on the method described in the papers:*
 
 [1] Mohammed Salah Al-Radhi, Tamás Gábor Csapó, Géza Németh, Time-domain envelope modulating the noise component of excitation in a continuous residual-based vocoder for statistical parametric speech synthesis, in Proceedings of the 18th Interspeech conference, pp. 434-438, Stockholm, Sweeden, 2017.
 
