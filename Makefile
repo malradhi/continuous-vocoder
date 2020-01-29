@@ -1,13 +1,9 @@
-.PHONY: build continuous vocoder
+.PHONY: build continuous_vocoder
 
 all: build
 
-build: speech analysis and synthesis
+build: continuous_vocoder build_sigproc
 
-build_sigproc: add permission and build synthesized speech
+build_sigproc: continuous_vocoder
 	@chmod u+x *.sh
 	@./run_continuous_vocoder.sh
-
-
-
-
