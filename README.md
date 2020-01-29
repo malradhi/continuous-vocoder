@@ -4,7 +4,7 @@ It is a software for speech analysis and synthesis. It can estimate continuous p
 * Continuous vocoder can be used for Statistical Parametric Speech Synthesis (SPSS), Text-to-Speech (TTS) and Voice Conversion (VC).
 
 
-# I- Requirements:
+## I- Requirements:
 
 . Python 3
 . SPTK 3.9
