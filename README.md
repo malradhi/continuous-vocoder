@@ -29,12 +29,13 @@ In the root directory, simply run:
 $ ./run_continuous_vocoder.sh
 ```
 
-You can also have a look at the file cont_features_extraction.py and cont_speech_synthesis.py to see how the continuous vocoder can work.
+You can also have a look at the file **cont_features_extraction.py** and **cont_speech_synthesis.py** to see how the continuous vocoder can work.
 
 
 
 ### Legal
 Copyright(C) 2020 Department of Telecommunications and Media informatics, Speech Communication and Smart Interactions Laboratory, Budapest University of Technology and Economics, Hungary.
+> http://smartlab.tmit.bme.hu/index-en
 
 
 
