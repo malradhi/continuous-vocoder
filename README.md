@@ -25,7 +25,9 @@ $ git clone https://github.com/malradhi/continuous_vocoder.git
 
 In the root directory, simply run:
 
+```
 $ ./run_continuous_vocoder.sh
+```
 
 You can also have a look at the file cont_features_extraction.py and cont_speech_synthesis.py to see how the continuous vocoder can work.
 
