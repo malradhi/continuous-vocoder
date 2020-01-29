@@ -59,7 +59,7 @@ Masanori Morise, CheapTrick, a spectral envelope estimator for high-quality spee
 ### Demo
 Audio samples are also available in English and Arabic (with emotions) at http://smartlab.tmit.bme.hu/vocoder_Arabic_2018
 
-
+ 
 
 ### References
 
