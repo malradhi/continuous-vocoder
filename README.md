@@ -1,5 +1,5 @@
 # Continuous Vocoder
-It is a software for speech analysis and synthesis. It can estimate continuous parameters: Fundamental frequency (F0), maximum voiced frequency (MVF) and spectral envelope (MGC). It also generate the speech like input speech using only 3 estimated continuous parameters with lower dimensions.
+It is a system for speech analysis and synthesis. It can estimate continuous parameters: Fundamental frequency (F0), maximum voiced frequency (MVF) and spectral envelope (MGC). It also generate the speech like input speech using only 3 estimated continuous parameters with lower dimensions.
 
 * Continuous vocoder can be used for Statistical Parametric Speech Synthesis (SPSS), Text-to-Speech (TTS) and Voice Conversion (VC).
 
@@ -46,7 +46,7 @@ Audio samples are also available in English and Arabic (with emotions) at http:/
 
 ### References
 
-*This software is based on the method described in the papers:*
+*This system is based on the method described in the papers:*
 
 [1] Mohammed Salah Al-Radhi, Tamás Gábor Csapó, Géza Németh, Time-domain envelope modulating the noise component of excitation in a continuous residual-based vocoder for statistical parametric speech synthesis, in Proceedings of the 18th Interspeech conference, pp. 434-438, Stockholm, Sweeden, 2017. https://www.doi.org/10.21437/Interspeech.2017-678
 
