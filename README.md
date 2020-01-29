@@ -16,8 +16,9 @@ It is a software for speech analysis and synthesis. It can estimate continuous p
 
 ### Install
 
+```
 $ git clone https://github.com/malradhi/continuous_vocoder.git
-
+```
 
 
 ### Testing / HowTo
@@ -65,7 +66,7 @@ Audio samples are also available in English and Arabic (with emotions) at
 
 *This software is based on the method described in the papers:*
 
-*** [1] *** Mohammed Salah Al-Radhi, Tamás Gábor Csapó, Géza Németh, Time-domain envelope modulating the noise component of excitation in a continuous residual-based vocoder for statistical parametric speech synthesis, in Proceedings of the 18th Interspeech conference, pp. 434-438, Stockholm, Sweeden, 2017.
+[1] Mohammed Salah Al-Radhi, Tamás Gábor Csapó, Géza Németh, Time-domain envelope modulating the noise component of excitation in a continuous residual-based vocoder for statistical parametric speech synthesis, in Proceedings of the 18th Interspeech conference, pp. 434-438, Stockholm, Sweeden, 2017.
 > https://www.doi.org/10.21437/Interspeech.2017-678
 
 [2] Mohammed Salah Al-Radhi, Omnia Abdo, Tamás Gábor Csapó, Sherif Abdou, Géza Németh, Mervat Fashal, A continuous vocoder for statistical parametric speech synthesis and its evaluation using an audio-visual phonetically annotated Arabic corpus, Computer Speech and Language, ScienceDirect Elsevier, 60, 2019.
