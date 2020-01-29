@@ -4,6 +4,7 @@ It is a software for speech analysis and synthesis. It can estimate continuous p
 * Continuous vocoder can be used for Statistical Parametric Speech Synthesis (SPSS), Text-to-Speech (TTS) and Voice Conversion (VC).
 
 
+
 ### Requirements:
 
 - Python 3
@@ -12,9 +13,11 @@ It is a software for speech analysis and synthesis. It can estimate continuous p
 - Python packages: numpy, scipy, pysptk, ssp, struct
 
 
+
 ### Install
 
 $ git clone https://github.com/malradhi/continuous_vocoder.git
+
 
 
 ### Testing / HowTo
@@ -26,8 +29,10 @@ $ ./run_continuous_vocoder.sh
 You can also have a look at the file cont_features_extraction.py and cont_speech_synthesis.py to see how the continuous vocoder can work.
 
 
+
 ### Legal
 Copyright(C) 2020 Department of Telecommunications and Media informatics, Speech Communication and Smart Interactions Laboratory, Budapest University of Technology and Economics, Hungary.
+
 
 
 ### External tools
@@ -46,8 +51,10 @@ Drugman T., Stylianou Y., "Maximum Voiced Frequency Estimation : Exploiting Ampl
 Masanori Morise, CheapTrick, a spectral envelope estimator for high-quality speech synthesis, Speech Communication, Volume 67, 2015, Pages 1-7, http://dx.doi.org/10.1016/j.specom.2014.09.003
 
 
+
 ### Demo
 Audio samples are also available in English and Arabic (with emotions) at http://smartlab.tmit.bme.hu/vocoder_Arabic_2018
+
 
 
 ### References
