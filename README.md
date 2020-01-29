@@ -39,16 +39,19 @@ Copyright(C) 2020 Department of Telecommunications and Media informatics, Speech
 
 * simple continuous F0 algorithm is used:
 
-Garner P. N., Cernak M., Motlicek P., "A simple continuous pitch estimation algorithm," IEEE Signal Processing Letters, vol. 20, no. 1, pp. 102-105, 2013, https://doi.org/10.1109/LSP.2012.2231675
+Garner P. N., Cernak M., Motlicek P., "A simple continuous pitch estimation algorithm," IEEE Signal Processing Letters, vol. 20, no. 1, pp. 102-105, 2013.
+> https://doi.org/10.1109/LSP.2012.2231675
 
 
 * continuous MVF, both amplitude and phase spectra are used:
 
-Drugman T., Stylianou Y., "Maximum Voiced Frequency Estimation : Exploiting Amplitude and Phase Spectra," IEEE Signal Processing Letters, vol. 21, no. 10, p. 1230–1234, 2014, https://doi.org/10.1109/LSP.2014.2332186 
+Drugman T., Stylianou Y., "Maximum Voiced Frequency Estimation : Exploiting Amplitude and Phase Spectra," IEEE Signal Processing Letters, vol. 21, no. 10, p. 1230–1234, 2014.
+> https://doi.org/10.1109/LSP.2014.2332186 
 
 * continuous MGC, the estimator CheapTrick is used:
 
-Masanori Morise, CheapTrick, a spectral envelope estimator for high-quality speech synthesis, Speech Communication, Volume 67, 2015, Pages 1-7, http://dx.doi.org/10.1016/j.specom.2014.09.003
+Masanori Morise, CheapTrick, a spectral envelope estimator for high-quality speech synthesis, Speech Communication, Volume 67, 2015, Pages 1-7.
+> http://dx.doi.org/10.1016/j.specom.2014.09.003
 
 
 
@@ -63,7 +66,10 @@ Audio samples are also available in English and Arabic (with emotions) at
 *This software is based on the method described in the papers:*
 
 [1] Mohammed Salah Al-Radhi, Tamás Gábor Csapó, Géza Németh, Time-domain envelope modulating the noise component of excitation in a continuous residual-based vocoder for statistical parametric speech synthesis, in Proceedings of the 18th Interspeech conference, pp. 434-438, Stockholm, Sweeden, 2017.
+> https://www.doi.org/10.21437/Interspeech.2017-678
 
 [2] Mohammed Salah Al-Radhi, Omnia Abdo, Tamás Gábor Csapó, Sherif Abdou, Géza Németh, Mervat Fashal, A continuous vocoder for statistical parametric speech synthesis and its evaluation using an audio-visual phonetically annotated Arabic corpus, Computer Speech and Language, ScienceDirect Elsevier, 60, 2019.
+> https://doi.org/10.1016/j.csl.2019.101025
 
 [3] Tamás Gábor Csapó, Géza Németh, Cernak M., "Residual-Based Excitation with Continuous F0 Modeling in HMM-Based Speech Synthesis," In Proceedings of the 3rd International Conference on Statistical Language and Speech Processing (SLSP), Budapest, Hungary, vol. 9449, pp. 27-38, 2015. 
+> https://doi.org/10.1007/978-3-319-25789-1_4
