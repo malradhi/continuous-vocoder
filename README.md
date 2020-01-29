@@ -17,9 +17,9 @@ It is a software for speech analysis and synthesis. It can estimate continuous p
 
 
 ### Install
-
+'''
 git clone https://github.com/malradhi/continuous_vocoder.git
-
+'''
 
 
 
