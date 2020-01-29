@@ -22,7 +22,7 @@
 
 
 # add permission for executing below files
-chmod u+x *.sh
+#chmod u+x *.sh
 
 
 # step 1: extract continuous features
