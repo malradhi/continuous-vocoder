@@ -21,13 +21,21 @@
 
 
 
-# step 1: extract continuous features
-./01_analysis.sh
 
+# step 1: check for missing packages
+./01_chk_rqmts.sh
 
-# step 2: synthesize speech
-./02_synthesis.sh
+if [ $? -eq 0 ]; then
 
+	# step 2: extract continuous features
+	./02_analysis.sh
 
-echo "Done!"
-echo ""
+	# step 3: synthesize speech
+	./03_synthesis.sh
+
+	echo "Done!"
+	echo ""
+
+else
+    echo ""
+fi

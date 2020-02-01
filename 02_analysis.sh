@@ -6,7 +6,7 @@
 #########################################
 
 echo ""
-echo "Step 1: Analysis by Continuous vocoder"
+echo "Step 2: Analysis by Continuous vocoder"
 echo ""
 
 
@@ -14,14 +14,7 @@ echo ""
 
 current_working_dir=$(pwd)
 
-sptk=${current_working_dir}/SPTK-3.9
-chmod u+x $sptk/*
-
-
 wav_dir=${current_working_dir}/example/wav/
-
-
-
 
 lf0_dir=${current_working_dir}/example/analysis/lf0/
 mvf_dir=${current_working_dir}/example/analysis/mvf/
@@ -34,8 +27,7 @@ mkdir -p ${mvf_dir}
 mkdir -p ${sp_dir}
 mkdir -p ${mgc_dir}
 
-
-
+# sampling frequency
 fs=16000
 
 
@@ -52,9 +44,7 @@ echo  "take only a few seconds per wave file..."
 echo ""
 
 
-
 python3 cont_features_extraction.py ${wav_dir} ${lf0_dir} ${mvf_dir} ${mgc_dir}
-
 
 
 for file in ${wav_dir}/*.wav
@@ -64,11 +54,10 @@ do
    
     
 	### extract log spectrum (sp) ### 
-	$sptk/analysis ${wav_dir}/$file_id.wav 0 ${sp_dir}/$file_id.sp 0
+	$current_working_dir/spec_env ${wav_dir}/$file_id.wav 0 ${sp_dir}/$file_id.sp 0
     
 	### convert log spectrum (sp) to mel-generalized cepstrum (mgc) 
-	$sptk/x2x +df ${sp_dir}/$file_id.sp | $sptk/sopr -R -m 32768.0 | $sptk/mcep -a $alpha -m $mcsize -l $nFFTHalf -e 1.0E-8 -j 0 -f 0.0 -q 3 > ${mgc_dir}/$file_id.mgcep
-
+	sptk x2x +df ${sp_dir}/$file_id.sp | sptk sopr -R -m 32768.0 | sptk mcep -a $alpha -m $mcsize -l $nFFTHalf -e 1.0E-8 -j 0 -f 0.0 -q 3 > ${mgc_dir}/$file_id.mgcep
 	
 done
 

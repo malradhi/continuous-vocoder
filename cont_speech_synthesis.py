@@ -51,14 +51,11 @@ hiPitch=350
 
 Fs = 16000
 
-
-
-
 wav_path = sys.argv[1]
 lf0_path = sys.argv[2] 
 mvf_path = sys.argv[3] 
 mgc_path = sys.argv[4]
-x2x      = sys.argv[5]
+
 octave   = '/usr/bin/octave-cli' 
 
 
@@ -137,7 +134,7 @@ def mgc_get_residual(basefilename):
     call(command, shell=True)
     
     # raw -> mgcep
-    command = 'x2x +sf ' + in_raw + ' | ' + \
+    command = 'sptk x2x +sf ' + in_raw + ' | ' + \
          'frame -l ' + str(frlen) + ' -p ' + str(frshft) + ' | ' + \
          'window -l ' + str(frlen) + ' -L 512 -w 1 -n 1 | ' + \
          'mgcep -a ' + str(alpha) + ' -c 3 -m ' + str(order) + ' -l 512 > ' + in_mgcep
@@ -145,10 +142,10 @@ def mgc_get_residual(basefilename):
     call(command, shell=True)
     
     # wav, mgcep -> residual
-    command = 'x2x +sf ' + in_raw + ' | ' + \
+    command = 'sptk x2x +sf ' + in_raw + ' | ' + \
         'mglsadf -k -v -a ' + str(alpha) + ' -c 3 -m ' + str(order) + ' -p ' + \
         str(frshft) + ' ' + in_mgcep + ' | ' + \
-        'x2x +fs | sox -c 1 -e signed-integer -b 16 -t raw -r ' + str(Fs) + ' - ' + \
+        'sptk x2x +fs | sox -c 1 -e signed-integer -b 16 -t raw -r ' + str(Fs) + ' - ' + \
         '-c 1 -e signed-integer -b 16 -t wav -r ' + str(Fs) + ' ' + in_resid
     # print(command)
     print('raw, mgcep -> resid.wav, ' + in_wav)
@@ -233,7 +230,7 @@ def mgc_decoder_residual_without_envelope(pitch, mvf, mgc_coeff, resid_codebook_
     command = 'sox ' + wav_path + basefilename + '_source_float32.wav' + ' -t raw -r ' + str(Fs) + ' - ' + ' | ' + \
               'mglsadf -P 5 -m ' + str(order) + ' -p ' + str(frshft) + \
               ' -a ' + str(alpha) + ' -c ' + str(stage) + ' ' + mgc_path + basefilename + '.mgcep' + ' | ' + \
-              x2x + ' +fs -o | sox -c 1 -b 16 -e signed-integer -t raw -r ' + str(Fs) + ' - -t wav -r ' + str(Fs) + ' ' + wav_path + basefilename + '_synthesized_without_envelope_0.wav'
+              'sptk x2x +fs -o | sox -c 1 -b 16 -e signed-integer -t raw -r ' + str(Fs) + ' - -t wav -r ' + str(Fs) + ' ' + wav_path + basefilename + '_synthesized_without_envelope_0.wav'
     ###print(command)
     run(command, shell=True)
     
@@ -241,7 +238,6 @@ def mgc_decoder_residual_without_envelope(pitch, mvf, mgc_coeff, resid_codebook_
         wav_path + basefilename + '_synthesized_without_envelope.wav'
     ###print(command)
     run(command, shell=True)
-    
    
     return [0]
 
@@ -273,7 +269,7 @@ def mgc_decoder_pulsenoise(pitch, mvf, mgc_coeff, resid_codebook_pca, basefilena
     command = 'sox ' + wav_path + basefilename + '_source_pulsenoise_float32.wav' + ' -t raw -r ' + str(Fs) + ' - ' + ' | ' + \
               'mglsadf -P 5 -m ' + str(order) + ' -p ' + str(frshft) + \
               ' -a ' + str(alpha) + ' -c ' + str(stage) + ' ' + mgc_path + basefilename + '.mgcep' + ' | ' + \
-              x2x + ' +fs -o | sox -c 1 -b 16 -e signed-integer -t raw -r ' + str(Fs) + ' - -t wav -r ' + str(Fs) + ' ' + wav_path + basefilename + '_synthesized_pulsenoise_0.wav'
+              'sptk x2x +fs -o | sox -c 1 -b 16 -e signed-integer -t raw -r ' + str(Fs) + ' - -t wav -r ' + str(Fs) + ' ' + wav_path + basefilename + '_synthesized_pulsenoise_0.wav'
     ###print(command)
     run(command, shell=True)
     
@@ -304,10 +300,10 @@ def mgc_filter_residual(pitch, mvf, mgc_coeff, resid_codebook_pca, basefilename)
     call(command, shell=True)
     
     # raw, mgcep -> residual
-    command = 'x2x +sf ' + in_raw + ' | ' + \
+    command = 'sptk x2x +sf ' + in_raw + ' | ' + \
         'mglsadf -k -v -a ' + str(alpha) + ' -c 3 -m ' + str(order) + ' -p ' + \
         str(frshft) + ' ' + in_mgcep + ' | ' + \
-        'x2x +fs | sox -c 1 -e signed-integer -b 16 -t raw -r ' + str(Fs) + ' - ' + \
+        'sptk x2x +fs | sox -c 1 -e signed-integer -b 16 -t raw -r ' + str(Fs) + ' - ' + \
         '-c 1 -e signed-integer -b 16 -t wav -r ' + str(Fs) + ' ' + in_resid
     # print(command)
     print('raw, mgcep -> resid.wav, ' + in_wav)
@@ -349,7 +345,7 @@ def mgc_filter_residual(pitch, mvf, mgc_coeff, resid_codebook_pca, basefilename)
     command = 'sox ' + wav_path + basefilename + '_residual_upper_float32.wav' + ' -t raw -r ' + str(Fs) + ' - ' + ' | ' + \
               'mglsadf -P 5 -m ' + str(order) + ' -p ' + str(frshft) + \
               ' -a ' + str(alpha) + ' -c ' + str(stage) + ' ' + mgc_path + basefilename + '.mgcep' + ' | ' + \
-              x2x + ' +fs -o | sox -c 1 -b 16 -e signed-integer -t raw -r ' + str(Fs) + ' - -t wav -r ' + str(Fs) + ' ' + wav_path + basefilename + '_synthesized_based_on_residual_0.wav'
+              'sptk x2x +fs -o | sox -c 1 -b 16 -e signed-integer -t raw -r ' + str(Fs) + ' - -t wav -r ' + str(Fs) + ' ' + wav_path + basefilename + '_synthesized_based_on_residual_0.wav'
     ###print(command)
     run(command, shell=True)
     
@@ -365,7 +361,7 @@ def mgc_filter_residual(pitch, mvf, mgc_coeff, resid_codebook_pca, basefilename)
     command = 'sox ' + wav_path + basefilename + '_residual_lower_float32.wav' + ' -t raw -r ' + str(Fs) + ' - ' + ' | ' + \
               'mglsadf -P 5 -m ' + str(order) + ' -p ' + str(frshft) + \
               ' -a ' + str(alpha) + ' -c ' + str(stage) + ' ' + mgc_path + basefilename + '.mgcep' + ' | ' + \
-              x2x + ' +fs -o | sox -c 1 -b 16 -e signed-integer -t raw -r ' + str(Fs) + ' - -t wav -r ' + str(Fs) + ' ' + wav_path + basefilename + '_synthesized_based_on_residual_0.wav'
+              'sptk x2x +fs -o | sox -c 1 -b 16 -e signed-integer -t raw -r ' + str(Fs) + ' - -t wav -r ' + str(Fs) + ' ' + wav_path + basefilename + '_synthesized_based_on_residual_0.wav'
     run(command, shell=True)
     
     command = "sox -G " + wav_path + basefilename + '_synthesized_based_on_residual_0.wav' + ' ' + \
@@ -380,15 +376,13 @@ def mgc_filter_residual(pitch, mvf, mgc_coeff, resid_codebook_pca, basefilename)
     command = 'sox ' + wav_path + basefilename + '_residual_float32.wav' + ' -t raw -r ' + str(Fs) + ' - ' + ' | ' + \
               'mglsadf -P 5 -m ' + str(order) + ' -p ' + str(frshft) + \
               ' -a ' + str(alpha) + ' -c ' + str(stage) + ' ' + mgc_path + basefilename + '.mgcep' + ' | ' + \
-              x2x + ' +fs -o | sox -c 1 -b 16 -e signed-integer -t raw -r ' + str(Fs) + ' - -t wav -r ' + str(Fs) + ' ' + wav_path + basefilename + '_synthesized_based_on_residual_0.wav'
+              'sptk x2x +fs -o | sox -c 1 -b 16 -e signed-integer -t raw -r ' + str(Fs) + ' - -t wav -r ' + str(Fs) + ' ' + wav_path + basefilename + '_synthesized_based_on_residual_0.wav'
     ###print(command)
     run(command, shell=True)
     
     command = "sox -G " + wav_path + basefilename + '_synthesized_based_on_residual_0.wav' + ' ' + \
         wav_path + basefilename + '_synthesized_based_on_residual.wav'
     run(command, shell=True)
-    
-
     
     return [0]
 
@@ -409,7 +403,6 @@ def triangular (z, a, b, c):
     y[second_half] = (c-z[second_half]) / (c-b)
     return y
 
-
 # envelope_type:
 # - Amplitude Envelope
 # - Hilbert Envelope
@@ -429,8 +422,7 @@ def apply_envelope(signal, envelope_type):
         analytic_signal = scipy.signal.hilbert(residual_frame)
         residual_frame_with_envelope = np.abs(analytic_signal)
         
-        
-        
+              
     elif envelope_type == 'Triangular':
         a = 0.35 * len(residual_frame)
         c = 0.65 * len(residual_frame)
@@ -527,7 +519,7 @@ def mgc_decoder_residual_with_envelope(pitch, mvf, mgc_coeff, resid_codebook_pca
     command = 'sox ' + wav_path + basefilename + '_source_' + envelope_type + '_float32.wav' + ' -t raw -r ' + str(Fs) + ' - ' + ' | ' + \
               'mglsadf -P 5 -m ' + str(order) + ' -p ' + str(frshft) + \
               ' -a ' + str(alpha) + ' -c ' + str(stage) + ' ' + mgc_path + basefilename + '.mgcep' + ' | ' + \
-              x2x + ' +fs -o | sox -c 1 -b 16 -e signed-integer -t raw -r ' + str(Fs) + ' - -t wav -r ' + str(Fs) + ' ' + wav_path + basefilename + '_synthesized_with_' + envelope_type + '_0.wav'
+              'sptk x2x +fs -o | sox -c 1 -b 16 -e signed-integer -t raw -r ' + str(Fs) + ' - -t wav -r ' + str(Fs) + ' ' + wav_path + basefilename + '_synthesized_with_' + envelope_type + '_0.wav'
     run(command, shell=True)
     
     command = "sox -G " + wav_path + basefilename + '_synthesized_with_' + envelope_type + '_0.wav' + ' ' + \
