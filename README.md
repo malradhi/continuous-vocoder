@@ -8,9 +8,9 @@ It is a system for speech analysis and synthesis. It can estimate continuous par
 ### Requirements:
 
 - Sox
-- Python 3
-- SPTK 3.9
+- SPTK
 - Octave
+- Python 3
 - Python packages: numpy, scipy, pysptk, ssp, struct
 
 
