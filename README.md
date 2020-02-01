@@ -18,7 +18,7 @@ It is a system for speech analysis and synthesis. It can estimate continuous par
 ### Install
 
 ```
-$ git clone https://github.com/malradhi/continuous_vocoder.git
+$ git clone https://github.com/malradhi/continuous-vocoder.git
 ```
 
 
