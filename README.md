@@ -10,7 +10,7 @@ It is a system for speech analysis and synthesis. It can estimate continuous par
 - Python 3
 - SoX
 - SPTK 3.9
-- Matlab or Octave
+- Octave
 - Python packages: numpy, scipy, pysptk, ssp, struct
 
 
