@@ -5,10 +5,9 @@
 ######## Continuous vocoder   ###########
 #########################################
 
-echo ""
-echo ""
 
-echo "Step 2: Synthesis by Continuous vocoder"
+echo ""
+echo "Step 3: Synthesis by Continuous vocoder"
 echo ""	
 
 current_working_dir=$(pwd)

@@ -6,7 +6,7 @@
 #########################################
 
 echo ""
-echo "Step 1: Analysis by Continuous vocoder"
+echo "Step 2: Analysis by Continuous vocoder"
 echo ""
 
 
