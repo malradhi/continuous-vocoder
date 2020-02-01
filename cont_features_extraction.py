@@ -102,23 +102,17 @@ def get_pitch(wav_path, basefilename):
     # Save pitch as binary
     lf0 = np.log(pitch)
     lf0.astype('float32').tofile(lf0_path + basefilename + '.lf0')
-
-    
+  
     return pitch
 
 
-
 ###############################  get_MVF  #########################################################
-
-# TODO
-# for now, added manually
-
 
 def get_MVF(wav_path, basefilename):
     
     in_wav = wav_path + basefilename + '.wav'
     in_lf0i = lf0_path + basefilename + '.lf0'
-    in_mvfi = mvf_path + basefilename + '.mvf'    #01.mvf
+    in_mvfi = mvf_path + basefilename + '.mvf'
     
     # Get Maximum Voiced Frequency
     command = octave + " --silent --eval \"MaximumVoicedFrequencyEstimation_nopp_run('" + \
@@ -132,7 +126,6 @@ def get_MVF(wav_path, basefilename):
         mvf = np.exp(np.fromfile(f, dtype=np.float32))
     
     return mvf
-
 
 
 ################################## Main program ############################################################################
@@ -151,7 +144,6 @@ for wav_file in os.listdir(wav_path):
         if not os.path.exists(mvf_path + basefilename + '.mvf'):
             get_MVF(wav_path, basefilename)
             
-
         print(' ')
         
 
